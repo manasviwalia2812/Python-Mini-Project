@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        #chat-container { width: 400px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; }
+        #chat-box { padding: 10px; max-height: 500px; overflow-y: auto; background-color: #f9f9f9; }
+        .message { padding: 8px; border-radius: 4px; margin-bottom: 10px; }
+        .user { background-color: #daf1da; align-self: flex-end; }
+        .bot { background-color: #eee; align-self: flex-start; }
+        #input-container { display: flex; border-top: 1px solid #ccc; }
+        #user-input { flex: 1; padding: 10px; border: none; outline: none; }
+        #send-button { padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("send-button").addEventListener("click", sendMessage);
+        document.getElementById("user-input").addEventListener("keypress", function (e) {
+            if (e.key === "Enter") sendMessage();
+        });
+
+        function appendMessage(content, className) {
+            const message = document.createElement("div");
+            message.className = `message ${className}`;
+            message.innerText = content;
+            document.getElementById("chat-box").appendChild(message);
+            document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            if (!userInput) return;
+            appendMessage(userInput, "user");
+            document.getElementById("user-input").value = "";
+
+            fetch("/get_response", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ user_input: userInput })
+            })
+            .then(response => response.json())
+            .then(data => appendMessage(data.response, "bot"))
+            .catch(error => appendMessage("Error: Could not get response.", "bot"));
+        }
+    </script>
+</body>
+</html>

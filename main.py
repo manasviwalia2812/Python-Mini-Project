@@ -1,21 +1,18 @@
-import openai
+import ollama
 
-openai.api_key = "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"
+def chatbot_response(conversation_history, prompt):
+    conversation_history.append({"role": "user", "content": prompt})
+    response = ollama.chat(model="llama2", messages=conversation_history)
+    print(response)  # This will help you inspect the response structure
+    conversation_history.append({"role": "assistant", "content": response['message']['content']})
+    return response['message']['content'], conversation_history
 
-def chat_with_gpt(prompt):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}]
-    )
+# Initialize conversation history
+conversation_history = []
 
-    return response['choices'][0]['message']['content'].strip()
-
-if __name__ == "__main__":
-    while True:
-        user_input = input("You: ")
-        if user_input.lower() in ["quit", "exit", "bye"]:
-            print("AI: Goodbye!")
-            break
-        
-        response = chat_with_gpt(user_input)
-        print("AI:", response)
+while True:
+    user_input = input("You: Type 'exit' to quit ")
+    if user_input.lower() == 'exit':
+        break
+    response, conversation_history = chatbot_response(conversation_history, user_input)
+    print("AI:", response)
