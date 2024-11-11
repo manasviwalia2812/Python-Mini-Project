@@ -35,6 +35,12 @@ class ConversationHistory:
         with open(filename, "w") as file:
             for message in self.history:
                 file.write(f"{message['role'].capitalize()}: {message['content']}\n")
+    
+    def delete_history(self, filename="conversation_history.json"):
+        """Delete the conversation history"""
+        self.history = []  # Clear the in-memory history
+        with open(filename, "w") as file:
+            json.dump(self.history, file)  # Save an empty history file
 
 # UserProfile class to handle user-related data (e.g., name, preferences)
 class UserProfile:
@@ -50,6 +56,13 @@ class UserProfile:
     def greet_user(self):
         """Return a greeting message"""
         return f"Hello, {self.name}!"
+
+    def update_profile(self, name=None, preferences=None):
+        """Update user's name or preferences"""
+        if name:
+            self.name = name
+        if preferences:
+            self.preferences.update(preferences)
 
 # Chatbot class to encapsulate chatbot logic
 class Chatbot:
@@ -104,6 +117,28 @@ def download_history():
         history_filename = "conversation_history.txt"
         chatbot.conversation_history.export_history(history_filename)  # Export to text file
         return send_file(history_filename, as_attachment=True)
+
+@app.route('/delete_history', methods=['POST'])
+def delete_history():
+    """Handle request to delete the conversation history"""
+    chatbot = Chatbot()  # Instantiate the chatbot
+    chatbot.conversation_history.delete_history()  # Clear the history
+    return jsonify({"response": "Conversation history deleted."})
+
+@app.route('/update_profile', methods=['POST'])
+def update_profile():
+    """Handle request to update user profile"""
+    user_id = request.json.get("user_id")
+    name = request.json.get("name")
+    preferences = request.json.get("preferences")
+    
+    # Create or update user profile
+    user_profile = UserProfile(user_id=user_id, name=name, preferences=preferences)
+    return jsonify({
+        "response": f"Profile updated for {user_profile.name}."
+    })
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

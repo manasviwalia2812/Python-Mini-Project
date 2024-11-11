@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #chat-container {
+            width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #chat-box {
+            padding: 10px;
+            max-height: 500px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .user {
+            background-color: #daf1da;
+            align-self: flex-end;
+        }
+
+        .bot {
+            background-color: #eee;
+            align-self: flex-start;
+        }
+
+        #input-container {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        #send-button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style for the button container */
+        #button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 10px;
+            position: relative; /* Ensure proper button positioning */
+        }
+
+        /* Dropdown menu for file type options */
+        #download-options {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 5px;
+            z-index: 1;
+        }
+
+        /* Option button styling */
+        #download-options button {
+            width: 150px;
+            padding: 8px 15px;
+            background-color: #f1f1f1;
+            border: none;
+            text-align: left;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        #download-options button:hover {
+            background-color: #ddd;
+        }
+
+        /* Styling for download buttons (JSON and Text) */
+        #download-json-history-button,
+        #download-text-history-button,#delete-history-button {
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border: none;
+            padding: 6px 12px; /* Reduced padding */
+            font-size: 12px; /* Reduced font size */
+            cursor: pointer;
+            border-radius: 8px;
+            width: 140px; /* Reduced width */
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #download-json-history-button:hover,
+        #download-text-history-button:hover {
+            background-color: #45a049;  /* Slightly darker green for hover effect */
+        }
+
+        /* Delete button styling */
+        #delete-history-button {
+            background-color: #f44336; /* Red background */
+        }
+
+        #delete-history-button:hover {
+            background-color: #d32f2f;
+            transform: translateY(-2px);
+        }
+        /* Typing animation for chatbot */
+        .typing-indicator {
+            display: none;
+            font-size: 14px;
+            color: #aaa;
+            font-style: italic;
+            margin-left: 15px;
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            animation: typing 1.5s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes typing {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <!-- Chat Box Display -->
+        <div id="chat-box">
+            <!-- Example message from bot -->
+            <div class="message bot">
+                Hello! How can I assist you today?
+            </div>
+    
+            <!-- Typing animation for chatbot (hidden by default) -->
+            <div class="typing-indicator" style="display: none;">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    
+        <!-- User Input and Send Button -->
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type a message..." />
+            <button id="send-button">Send</button>
+        </div>
+    
+        <!-- Button Container (Download and Delete Buttons) -->
+        <div id="button-container">
+            <!-- Download buttons -->
+            <button id="download-json-history-button">Download history as JSON</button>
+            <button id="download-text-history-button">Download history as Text</button>
+    
+            <!-- Delete History button -->
+            <button id="delete-history-button">Delete History</button>
+        </div>
+    </div>
+    
+
+    <script>
+        // Handle "Download as JSON" button click
+        document.getElementById("download-json-history-button").addEventListener("click", function () {
+            // Generate a JSON file
+            const chatHistory = getChatHistory();  // Assuming this function collects the chat history
+            const blob = new Blob([JSON.stringify(chatHistory, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "chat-history.json";  // Default filename
+            a.click();
+            URL.revokeObjectURL(url);  // Clean up
+        });
+
+        // Handle "Download as Text" button click
+        document.getElementById("download-text-history-button").addEventListener("click", function () {
+            // Generate a Text file
+            const chatHistory = getChatHistory();  // Assuming this function collects the chat history
+            const textContent = chatHistory.map(message => message.content).join("\n");  // Combine messages into text format
+            const blob = new Blob([textContent], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "chat-history.txt";  // Default filename
+            a.click();
+            URL.revokeObjectURL(url);  // Clean up
+        });
+
+        // Function to simulate the bot typing animation
+    function showTypingAnimation() {
+        const typingIndicator = document.querySelector('.typing-indicator');
+        typingIndicator.style.display = 'inline-block';  // Show the typing animation
+        setTimeout(() => {
+            typingIndicator.style.display = 'none';  // Hide the typing animation after 2 seconds
+        }, 2000); // Adjust timing as needed
+    }
+
+    // Trigger the typing animation when bot is "typing"
+    function botSendMessage(message) {
+        showTypingAnimation();
+        setTimeout(() => {
+            const chatBox = document.getElementById('chat-box');
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('message', 'bot');
+            botMessage.textContent = message;
+            chatBox.appendChild(botMessage);
+        }, 2000);  // Message will appear after the typing animation
+    }
+
+
+        // Handle "Delete History" button click
+        document.getElementById("delete-history-button").addEventListener("click", function () {
+            // Clear the chat history
+            document.getElementById("chat-box").innerHTML = "";  // Clear chat display
+            alert("Chat history deleted!");  // Show alert confirmation
+        });
+
+        // Example function that could return chat history
+        function getChatHistory() {
+            return [
+                { user: "Hello!", bot: "Hi, how can I help?" },
+                { user: "What is this?", bot: "This is a chat history!" }
+            ];
+        }
+
+        // Handle Send message functionality
+        document.getElementById("send-button").addEventListener("click", sendMessage);
+        document.getElementById("user-input").addEventListener("keypress", function (e) {
+            if (e.key === "Enter") sendMessage();
+        });
+
+        function appendMessage(content, className) {
+            const message = document.createElement("div");
+            message.className = `message ${className}`;
+            message.innerText = content;
+            document.getElementById("chat-box").appendChild(message);
+            document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            if (!userInput) return;
+            appendMessage(userInput, "user");
+            document.getElementById("user-input").value = "";
+
+            // Show typing indicator (simplified, no API call)
+            appendMessage("Chatbot is typing...", "bot");
+        }
+    </script>
+</body>
+
+</html>
