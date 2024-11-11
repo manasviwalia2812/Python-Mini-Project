@@ -15,6 +15,41 @@
         #user-input { flex: 1; padding: 10px; border: none; outline: none; }
         #send-button { padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
 
+            /* Style for the download buttons */
+        #download-json-history-button, #download-text-history-button {
+            background-color: #4CAF50; /* Green background for the button */
+            color: white; /* White text color */
+            border: none; /* Remove borders */
+            padding: 8px 15px; /* Adjust the padding for a bigger button */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Display buttons side by side */
+            font-size: 10px; /* Set font size */
+            cursor: pointer; /* Add a pointer cursor */
+            border-radius: 8px; /* Rounded corners */
+            margin: 10px; /* Add space between buttons */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+        }
+
+        /* Hover effect for the buttons */
+        #download-json-history-button:hover, #download-text-history-button:hover {
+            background-color: #45a049; /* Darker green */
+            transform: translateY(-2px); /* Slightly raise the button on hover */
+        }
+
+        /* Focus effect for the buttons */
+        #download-json-history-button:focus, #download-text-history-button:focus {
+            outline: none; /* Remove the default focus outline */
+            box-shadow: 0 0 0 2px #4CAF50; /* Add a green outline */
+        }
+
+        /* Disabled button style */
+        #download-json-history-button:disabled, #download-text-history-button:disabled {
+            background-color: #d3d3d3; /* Grey background */
+            cursor: not-allowed; /* Change cursor to not-allowed */
+        }
+
         /* Typing indicator styling */
         .typing-indicator {
             display: flex;
@@ -48,9 +83,18 @@
             <input type="text" id="user-input" placeholder="Type a message...">
             <button id="send-button">Send</button>
         </div>
+        <button id="download-json-history-button">Download History as JSON</button>
+        <button id="download-text-history-button">Download History as Text</button>
     </div>
 
     <script>
+        document.getElementById("download-json-history-button").addEventListener("click", function () {
+            window.location.href = "/download_history?file_type=json";
+        });
+
+        document.getElementById("download-text-history-button").addEventListener("click", function () {
+            window.location.href = "/download_history?file_type=text";
+        });
         document.getElementById("send-button").addEventListener("click", sendMessage);
         document.getElementById("user-input").addEventListener("keypress", function (e) {
             if (e.key === "Enter") sendMessage();
