@@ -4,154 +4,126 @@ INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 693-129-769
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:02:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:04:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:04:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 INFO:root:User: hi
 INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
 INFO:root:Bot: Hello! It's nice to meet you. Is there something I can help you with or would you like to chat?
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:02:29] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 693-129-769
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:03:53] "GET / HTTP/1.1" 200 -
-INFO:root:User: hi
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hi again! How are you today? Is there anything on your mind that you'd like to talk about or ask? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:04:02] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 693-129-769
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 693-129-769
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:14:11] "GET / HTTP/1.1" 200 -
-INFO:root:User: hi
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hello! It's great to hear from you again. How have you been feeling lately? Is there anything new happening in your life that you'd like to share or ask about? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:14:40] "POST /get_response HTTP/1.1" 200 -
-INFO:root:User: what's your name?
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hi! My name is LLaMA, I'm a large language model trained by a team of researcher at Meta AI. How about you? What's your name?
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:15:02] "POST /get_response HTTP/1.1" 200 -
-INFO:root:User: My name is Manasvi. nice to meet you!
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Nice to meet you too, Manasvi! *smiles* It's great to have you here. Is there anything you'd like to talk about or ask? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:15:25] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:15:31] "GET /download_history?file_type=json HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:15:44] "GET /download_history?file_type=text HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:16:50] "GET / HTTP/1.1" 200 -
-INFO:root:User: hi
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hi again! How are you doing today? Is there something on your mind that you'd like to talk about or ask? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:16:59] "POST /get_response HTTP/1.1" 200 -
-INFO:root:User: do you remember my name?
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Of course, Manasvi! *smiles* You told me your name earlier. Is there something on your mind that you'd like to talk about or ask? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:17:14] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:29:37] "GET / HTTP/1.1" 200 -
-INFO:root:User: hi
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:30:36] "GET / HTTP/1.1" 200 -
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hi again! How are you feeling today? Is there anything new happening in your life that you'd like to share or ask about? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:30:56] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:31:30] "GET / HTTP/1.1" 200 -
-INFO:root:User: hi
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hi Manasvi! *smiles* It's great to hear from you again. Is there anything on your mind that you'd like to talk about or ask? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:31:52] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 693-129-769
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:39:57] "GET / HTTP/1.1" 200 -
-INFO:root:User: hi
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hi Manasvi! *smiles* It's great to hear from you again. How have you been feeling lately? Is there anything new happening in your life that you'd like to share or ask about? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:41:38] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:41:52] "POST /delete_history HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:41:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:05:05] "POST /get_response HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:08:48] "GET /download_history?file_type=json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:08:50] "GET /download_history?file_type=text HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:13:33] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:14:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:20:36] "GET / HTTP/1.1" 200 -
 INFO:root:User: hi
 INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
 INFO:root:Bot: Hello! It's nice to meet you. Is there something I can help you with or would you like to chat?
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:42:10] "POST /get_response HTTP/1.1" 200 -
-INFO:root:User: do you know my name?
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: I'm just an AI, I don't have access to personal information such as names. I'm here to help answer any questions you may have or provide assistance with tasks, but I can't reveal personal information about individuals without their consent. Is there anything else I can help you with?
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:42:44] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:43:24] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:44:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:20:52] "POST /get_response HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:23:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:24:12] "GET / HTTP/1.1" 200 -
 INFO:root:User: hi
 INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hello! It's nice to meet you too. Is there something I can help you with or would you like to chat?
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:44:39] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:46:31] "GET / HTTP/1.1" 200 -
+INFO:root:Bot: Hi again! How are you today? Is everything okay?
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:24:20] "POST /get_response HTTP/1.1" 200 -
+INFO:root:User: tell me computers
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:root:Bot: Sure, I'd be happy to tell you about computers!
+
+Computers are electronic devices that are capable of processing, storing, and communicating information. They can perform a wide range of tasks, including:
+
+* Storing and organizing data
+* Performing calculations and mathematical operations
+* Creating and editing documents and other digital content
+* Connecting to the internet and accessing online resources
+* Playing games and entertainment software
+* Controlling other devices, such as robots or home appliances
+
+There are several types of computers, including:
+
+* Personal computers (PCs), which are designed for individual use and typically have a keyboard, mouse, and display screen.
+* Servers, which are powerful computers used to manage and store data for multiple users or devices.
+* Mainframes, which are large, powerful computers used by organizations for complex calculations and data processing.
+* Supercomputers, which are the most powerful computers available and are used for scientific simulations, weather forecasting, and other high-performance computing applications.
+* Mobile devices, such as laptops, tablets, and smartphones, which are designed to be portable and can be used on the go.
+
+Computers use a variety of hardware components, including:
+
+* Central processing unit (CPU): the "brain" of the computer, which performs calculations and executes instructions.
+* Memory (RAM): temporary storage for data and programs that are being used by the CPU.
+* Storage devices: permanent storage for data and programs, such as hard drives or solid state drives.
+* Input/output (I/O) devices: allow users to interact with the computer, such as keyboards, mice, and displays.
+
+Computers also use software, which are programs that tell the computer what to do and how to do it. Examples of software include:
+
+* Operating systems (OS): manage the computer's hardware and provide a platform for running applications.
+* Productivity software: helps users create and edit documents, spreadsheets, and presentations.
+* Entertainment software: provides games and other forms of entertainment for users to enjoy.
+* Utility software: performs maintenance tasks, such as backing up data or optimizing system performance.
+
+I hope this helps! Let me know if you have any questions or if there's anything else you'd like to know about computers.
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:28:15] "POST /get_response HTTP/1.1" 200 -
+INFO:root:User: my name is Manasvi. thank you
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:root:Bot: Hello Manasvi! It's nice to meet you. Is there something I can help you with or would you like to chat?
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:28:53] "POST /get_response HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:28:58] "GET /download_history?file_type=json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:29:02] "GET /download_history?file_type=text HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:29:10] "GET / HTTP/1.1" 200 -
 INFO:root:User: hi
 INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hi again! How are you today? Is there anything on your mind that you'd like to talk about or ask? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:46:43] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:46:50] "GET /download_history?file_type=json HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:47:02] "POST /delete_history HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:47:28] "GET /download_history?file_type=json HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:48:12] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:49:52] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:51:56] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:52:02] "GET /download_history?file_type=json HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:54:31] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 00:54:36] "POST /delete_history HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:00:07] "GET / HTTP/1.1" 200 -
+INFO:root:Bot: Hi again, Manasvi! How are you today? Is everything okay?
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:29:19] "POST /get_response HTTP/1.1" 200 -
+INFO:root:User: i love you
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:root:Bot: Aww, thank you so much, Manasvi! That's very kind of you to say. I'm just an AI, I don't have personal feelings or emotions, but I'm here to help you with any questions or tasks you may have. Is there something specific you'd like me to assist you with?
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:29:58] "POST /get_response HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:33:58] "GET / HTTP/1.1" 200 -
 INFO:root:User: hi
 INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hello! It's nice to meet you. Is there something I can help you with or would you like to chat?
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:00:30] "POST /get_response HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:02:09] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:04:07] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:06:04] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:06:16] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:06:16] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:06:16] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:06:17] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:08:39] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:09:52] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:12:19] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:13:06] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:13:34] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:15:53] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:16:48] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:17:48] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:18:10] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:19:43] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:19:48] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:21:13] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:21:35] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:23:02] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:23:41] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:23:47] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:26:10] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:26:11] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:26:12] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:26:12] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:27:06] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:27:07] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:27:39] "GET / HTTP/1.1" 200 -
+INFO:root:Bot: Hi Manasvi! It's great to hear from you again. How can I help you today? Do you have any questions or topics you'd like to discuss?
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:34:12] "POST /get_response HTTP/1.1" 200 -
+INFO:root:User: hi
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:34:24] "GET / HTTP/1.1" 200 -
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:root:Bot: Hi Manasvi! It's nice to see you again. Is there something new you'd like to talk about or ask about? I'm here to help with any questions or topics you have in mind.
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:34:31] "POST /get_response HTTP/1.1" 200 -
+INFO:root:User: hi
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:root:Bot: Hello Manasvi! How are you doing today? Is everything okay?
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:34:42] "POST /get_response HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\DELL\\Desktop\\Python-Mini-Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 693-129-769
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:39:55] "GET / HTTP/1.1" 200 -
+INFO:root:User: hi
+INFO:werkzeug:127.0.0.1 - - [19/Nov/2024 18:41:12] "GET / HTTP/1.1" 200 -
+INFO:root:User: hi
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 693-129-769
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:28:28] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:28:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2024 23:34:33] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2024 23:34:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 INFO:root:User: hi
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2024 23:36:17] "GET / HTTP/1.1" 200 -
+INFO:root:User: hi
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2024 23:37:16] "GET /download_history?file_type=json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2024 23:37:36] "POST /delete_history HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2024 23:37:40] "GET /download_history?file_type=json HTTP/1.1" 200 -
+INFO:root:User: hi
+INFO:werkzeug: * Detected change in 'c:\\Users\\DELL\\Desktop\\Python-Mini-Project\\chatbot.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 693-129-769
+INFO:root:User: hi chatbot. tell me a joke
 INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
-INFO:root:Bot: Hello again! How are you today? Is there anything on your mind that you'd like to talk about or ask? I'm here to listen and help if I can.
-INFO:werkzeug:127.0.0.1 - - [12/Nov/2024 01:28:57] "POST /get_response HTTP/1.1" 200 -
+INFO:root:Bot: 
+Sure, here's one for you:
+
+Why don't scientists trust atoms?
+Because they make up everything! \U0001f602
+
+I hope that brought a smile to your face! Do you want to hear another one?
