@@ -5,8 +5,8 @@ import logging
 
 app = Flask(__name__)
 
-# Logging configuration
-logging.basicConfig(filename='chatbot.log', level=logging.INFO)
+# # Logging configuration
+# logging.basicConfig(filename='chatbot.log', level=logging.INFO)
 
 # ConversationHistory class to handle saving/loading conversation history
 class ConversationHistory:

@@ -4,7 +4,7 @@ import logging
 
 
 # Logging configuration
-logging.basicConfig(filename='chatbot.log', level=logging.INFO)
+# logging.basicConfig(filename='chatbot.log', level=logging.INFO)
 
 
 # ConversationHistory class to handle saving/loading conversation history
@@ -31,9 +31,10 @@ class ConversationHistory:
 
     def export_history(self, filename="conversation_history.txt"):
         """Export the conversation history as a text file"""
-        with open(filename, "w") as file:
+        with open(filename, "w", encoding="utf-8") as file:  # Specify UTF-8 encoding
             for message in self.history:
                 file.write(f"{message['role'].capitalize()}: {message['content']}\n")
+
 
     def delete_history(self):
         """Delete the conversation history"""
@@ -54,6 +55,12 @@ class UserProfile:
     def update_preferences(self, new_preferences):
         """Update user preferences"""
         self.preferences.update(new_preferences)
+
+    def display_preferences(self):
+        """Display current preferences"""
+        if not self.preferences:
+            return "No preferences set."
+        return "Current preferences:\n" + "\n".join(f"{key}: {value}" for key, value in self.preferences.items())
 
 
 # Chatbot class to encapsulate chatbot logic
@@ -89,44 +96,48 @@ class Chatbot:
         print("3. Export conversation history")
         print("4. Delete conversation history")
         print("5. Update user profile")
-        print("6. Exit")
+        print("6. View current preferences")
+        print("7. Exit")
 
     def handle_menu_option(self, option):
-        """Handle menu options"""
-        if option == "1":
-            user_input = input("You: ")
-            response = self.send_message(user_input)
-            print(f"Bot: {response}")
-        elif option == "2":
-            print("\nConversation History:")
-            for message in self.conversation_history.history:
-                print(f"{message['role'].capitalize()}: {message['content']}")
-        elif option == "3":
-            file_type = input("Enter file type (json/txt): ").strip().lower()
-            if file_type == "json":
-                self.conversation_history.save_history()
-                print("Conversation history saved as JSON.")
-            elif file_type == "txt":
-                self.conversation_history.export_history()
-                print("Conversation history exported as TXT.")
-            else:
-                print("Invalid file type.")
-        elif option == "4":
-            self.conversation_history.delete_history()
-            print("Conversation history deleted.")
-        elif option == "5":
-            name = input("Enter your name: ").strip()
-            preferences = input("Enter preferences (key=value pairs, comma-separated): ")
-            prefs_dict = dict(pref.split("=") for pref in preferences.split(",") if "=" in pref)
-            self.user_profile.name = name
-            self.user_profile.update_preferences(prefs_dict)
-            print(f"Profile updated. Welcome, {self.user_profile.name}!")
-        elif option == "6":
-            print("Goodbye!")
-            return False
-        else:
-            print("Invalid option. Please try again.")
-        return True
+      """Handle menu options"""
+      if option == "1":
+          user_input = input("You: ")
+          response = self.send_message(user_input)
+          print(f"Bot: {response}")
+      elif option == "2":
+          print("\nConversation History:")
+          for message in self.conversation_history.history:
+              print(f"{message['role'].capitalize()}: {message['content']}")
+      elif option == "3":
+          file_type = input("Enter file type (json/txt): ").strip().lower()
+          if file_type == "json":
+              self.conversation_history.save_history()
+              print("Conversation history saved as JSON.")
+          elif file_type == "txt":
+              self.conversation_history.export_history()
+              print("Conversation history exported as TXT.")
+          else:
+              print("Invalid file type.")
+      elif option == "4":
+          self.conversation_history.delete_history()
+          print("Conversation history deleted.")
+      elif option == "5":
+          name = input("Enter your name: ").strip()
+          preferences = input("Enter preferences (key=value pairs, comma-separated): ")
+          prefs_dict = dict(pref.split("=") for pref in preferences.split(",") if "=" in pref)
+          self.user_profile.name = name
+          self.user_profile.update_preferences(prefs_dict)
+          print(f"Profile updated. Welcome, {self.user_profile.name}!")
+          print(self.user_profile.display_preferences())  # Show updated preferences
+      elif option == "6":
+          print(self.user_profile.display_preferences())  # Add option to display preferences
+      elif option == "7":
+          print("Goodbye!")
+          return False
+      else:
+          print("Invalid option. Please try again.")
+      return True
 
 
 def main():
